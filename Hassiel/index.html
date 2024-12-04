@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Blog Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
+  </symbol>
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+</svg>
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Call of duty Zombies</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">El modo mas popular de Black Ops</h1>
+      <p class="lead my-3">En el contenido de esta página encontraras informacion sobre el modo de juego zombies de los juegos de call of duty black ops.</p>
+      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Seguir leyendo...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
+          <h3 class="mb-0">Black ops 2</h3>
+          <p class="card-text mb-auto">Te explicaremos como son los mapas de el juego, los enemigos, mejores y armas que podras encontrar en este modo de juego.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Seguir leyendo...
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="https://acortar.link/EbknmJ" alt="Descripción de la imagen" width="200" height="250" style="object-fit: cover;">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis"></strong>
+          <h3 class="mb-0">Black ops 3</h3>
+          <p class="mb-auto">En este blog encontraras toda la informacion que necesitas saber para jugar el modo de juego de zombies.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Ir a este blog...
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="https://i.ytimg.com/vi/ufQH2q649JE/maxresdefault.jpg" alt="Descripción de la imagen" width="200" height="250" style="object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Explora toda la informacion de este blog
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Zobies Black ops 2</h2>
+
+        <p>Este blog explicara todo lo que tenga que ver con call of duty zombies.</p>
+        <hr>
+        <h2>¿Qué es Black ops Zombies?</h2>
+        <p>Call of Duty: Black Ops 2 Zombies es un modo de juego dentro del videojuego Call of Duty: Black Ops 2, desarrollado por Treyarch y lanzado en 2012. 
+          Es una experiencia cooperativa (y a veces competitiva) en la que los jugadores enfrentan hordas interminables de zombis mientras intentan sobrevivir el mayor tiempo posible.
+          <hr> 
+          Este modo es una de las características más populares de la saga Call of Duty debido a su mezcla de acción, estrategia y narrativa única.
+          Donde tambien los jugadores tendran que ir mejorando cada vez que van avanzando las oleadas todo su equipamiento ya que los zombies se volveran mas fuertes y vendran en
+          mayor cantidad.
+          <hr>
+          Todo esto se complementa con una gran variedad de armas y mejoras que el jugador podra ir comprando conrome mas zombies vaya eliminando, permitiendo estar al nivel y
+          que no sea facil sucumbir ante ellos. </p>
+        <h2>MAPAS</h2>
+        <p>En este modo de juego existen una gran variedad de mapas y te explicaremos cuales son</p>
+        <blockquote class="blockquote">
+          <p>Antes de empezar</p>
+        </blockquote>
+        <p>los mapas son los escenarios o niveles donde los jugadores enfrentan hordas de zombis. 
+          Cada mapa es un lugar único con una ambientación específica, diferentes desafíos, secretos ocultos (Easter Eggs) y 
+          mecánicas especiales que enriquecen la experiencia de juego.</p>
+        <h3>Lista de los mapas</h3>
+        <ul>
+          <li>TranZit</li>
+          <li>Nuketown Zombies</li>
+          <li>Die Rise</li>
+          <li>Mob of the Dead</li>
+          <li>Buried</li>
+          <li>Origins</li>
+        </ul>
+
+        <p>Descripcion de cada mapa presente:</p>
+        <dl>
+          <dt>TranZit</dt>
+          <dd>Un mapa extenso dividido en varias áreas conectadas por un autobús. Los jugadores pueden moverse entre estaciones 
+            mientras enfrentan zombis en diferentes ubicaciones, como una granja, 
+            un taller y un banco. Es conocido por su dificultad y su diseño no convencional</dd>
+
+          <dt>Nuketown Zombies</dt>
+          <dd>Ambientado en el icónico mapa multijugador "Nuketown", este mapa compacto incluye perks que caen aleatoriamente y 
+            un contador de zombis que revela el progreso de los jugadores.</dd>
+
+          <dt>Die Rise</dt>
+          <dd>Ubicado en rascacielos derrumbados, este mapa destaca por su diseño vertical, 
+            que incluye saltos arriesgados entre edificios y un arma especial llamada Sliquifier.</dd>
+
+          <dt>Mob of the Dead</dt>
+          <dd>Situado en la prisión de Alcatraz durante los años 30, este mapa tiene un enfoque en la narrativa, 
+            con personajes únicos y mecánicas como el modo Afterlife, que permite a 
+            los jugadores resolver acertijos mientras están "muertos".</dd>
+
+          <dt>Buried</dt>
+          <dd>n pueblo subterráneo del Viejo Oeste, accesible tras un derrumbe. Incluye elementos únicos como Leroy, 
+            un gigante que ayuda a los jugadores, y trampas personalizables.</dd>
+
+          <dt>Origins</dt>
+          <dd>Ambientado en la Primera Guerra Mundial, este mapa presenta a los personajes originales en una versión más joven. 
+            Los jugadores deben reunir los Elemental Staves, enfrentarse a un robot gigante y 
+            resolver un extenso Easter Egg lleno de misterios.</dd>
+        </dl>
+        <h1>Potenciadores</h1>
+        <p>Los potenciadores en Call of Duty: Black Ops 2 Zombies son bonificaciones temporales que los zombis 
+          pueden soltar al morir. Estos objetos aparecen como íconos brillantes en el suelo y otorgan efectos útiles para los jugadores, 
+          ayudándolos a sobrevivir y manejar mejor las oleadas de enemigos.</p>
+
+
+        <p></p>
+        <h2>Insta Kill</h2>
+        <p>Este potenciador hace que cualquier Zombie muera de un solo golpe con cualquier arma, permitiendo
+          eliminar a muchos zomies de una manera rapida y sin desperdiciar tanta balas.
+        </p>
+        <h2>Max Ammo</h2>
+        <p>Hace que todos los jugadores recuperen todas las balas de sus armas al instante, es muy util 
+          para no tener que comprar mas balas o tener que dejar tu arma por alguna que si tenga balas.</p>
+
+        <h2>Double Points</h2>
+        <p>Hace que todos los jugadores obtengan el doble de puntos al disparar o matar zombies, esto ayuda a conseguir
+          mas facil los puntos necesarios para mejoras mas poderosas.</p>
+        
+        <h2>Nuke</h2>
+        <p>Elimina a todos los zombies que se encuentren en el mapa y otorga los puntos de la eliminacion a los jugadores.</p>
+      
+        <h2>Carpenter</h2>
+        <p>Repara Todas las barreras de las ventanas para que se tarden mas en cruzar los zombies.</p>
+
+        <h2>Fire Sale</h2>
+        <p>Reduce el costo de la caja misyeriosa a tan solo 10 puntos para que puedan obtener mejores armas.</p>
+      </article>
+
+      <article class="blog-post">
+
+
+        <h3>Mapas y características</h3>
+        <p>Esta tabla mostrara los mapas mas jugados junto con las rondas mas altas en las que se han llegado en dichos mapas.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>MAPA</th>
+              <th>Rondas mas altas</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TranZit</td>
+              <td>150+</td>
+              <td>Un mapa extenso que conecta diferentes zonas por un autobús.</td>
+            </tr>
+            <tr>
+              <td>Nuketown Zombies</td>
+              <td>90+</td>
+              <td>Ubicado en el clásico mapa multijugador, con zombis y perks aleatorios.</td>
+            </tr>
+            <tr>
+              <td>Die Rise</td>
+              <td>130+</td>
+              <td>Un mapa vertical ambientado en rascacielos colapsados.</td>
+            </tr>
+            <tr>
+              <td>Origins</td>
+              <td>200+</td>
+              <td>Ubicado en la Primera Guerra Mundial, con los Elemental Staves.</td>
+            </tr>
+            <tr>
+              <td>Buried</td>
+              <td>150+</td>
+              <td>Un pueblo subterráneo con armas especiales y estrategias defensivas.</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Mob of the Dead</td>
+              <td>160+</td>
+              <td>Ambientado en Alcatraz, con personajes únicos y una trama oscura.</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Estas son las estadisticas que se han registrado a lo largo de los años que han realizado los jugadores en esos mapara de modo zombies.
+          Cabe recalcar que las para alcanzar ese numero de rondas se han usado algunos glitches para facilitar el proceso y conseguirlas de una manera
+          mas rapida.
+        </p>
+      </article>
+
+      <article class="blog-post">
+
+
+
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Dato Interesante</h4>
+          <p class="mb-0">La probabilidad de obtener el oso de peluche en la caja misteriosa se estima que es aproximadamente 1 de cada 8 tiradas (12.5%). 
+            Esto puede variar ligeramente dependiendo del mapa y de cuántas veces se haya usado la caja en esa partida.</p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Post mas Recientes</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <img src="https://acortar.link/dZC90N" alt="Zombies" style="width: 100%; height: 150px; object-fit: cover;">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Nuevos easter eggs en black ops 6</h6>
+                  <small class="text-body-secondary">Noviembre 30, 2024</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <img src="https://acortar.link/aOHQIy" alt="Zombies" style="width: 100%; height: 96px; object-fit: cover;">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Historia de Zombies</h6>
+                  <small class="text-body-secondary">Enero 14, 2022</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <img src="https://acortar.link/2iEOiv" alt="Zombies" style="width: 100%; height: 120px; object-fit: cover;">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Nuevo Balck ops 6 con Zombies</h6>
+                  <small class="text-body-secondary">Noviembre 13, 2024</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Actualizaciones de el juego</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Noviembre 2012</a></li>
+            <li><a href="#">Enero 2013</a></li>
+            <li><a href="#">Abril 2013</a></li>
+            <li><a href="#">Julio 2013</a></li>
+            <li><a href="#">Agosto 2013</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p class="mb-0">
+    <a href="#">Ir al Inicio</a>
+    <button type="button" onclick="myFunction()" class="btn btn-primary">
+      Siguiente..
+    </button>
+  </p>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+  function myFunction() {
+    window.location.href = 'Perks.html'
+  }
+  
+  </script>
+
+    </body>
+</html>
